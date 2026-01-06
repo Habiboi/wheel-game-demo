@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d4a790dda514ec79be5dcf6e3dd6e2, type: 3}
+  m_Name: ZoneRules
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneRuleData
+  presets:
+  - {fileID: 11400000, guid: bbe3109c9e4394469993c2998980e95f, type: 2}
+  - {fileID: 11400000, guid: ac9b40d423c8d4d1895bde045be56ff3, type: 2}
+  - {fileID: 11400000, guid: b8e03ff2b9fca43b9860a8a1af80f33c, type: 2}

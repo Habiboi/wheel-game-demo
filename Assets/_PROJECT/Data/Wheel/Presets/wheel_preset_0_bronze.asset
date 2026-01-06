@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35fc56193b99a4b44831d272df4656f1, type: 3}
+  m_Name: wheel_preset_0_bronze
+  m_EditorClassIdentifier: Assembly-CSharp::WheelPresetData
+  spinType: 0
+  slotCount: 8
+  availableSlices:
+  - {fileID: 11400000, guid: deffeeba99c4045e9bf5975811e4361f, type: 2}
+  - {fileID: 11400000, guid: 7bf288cfc85e6432abe4a40b1e485f0f, type: 2}
+  - {fileID: 11400000, guid: 4ab443f4d2fa246da92b989af3dfef18, type: 2}
+  - {fileID: 11400000, guid: 669b5168babb94cab864b65a51a0dede, type: 2}
+  - {fileID: 11400000, guid: b0e6960348a18441fbad9bf7398f6b67, type: 2}
+  - {fileID: 11400000, guid: ebd67e030cc5f44f9966f3b6fc5e157c, type: 2}
+  - {fileID: 11400000, guid: 926b2adfe6e86401780d018a41f59c33, type: 2}
+  allowBomb: 1
