@@ -4,5 +4,6 @@ using UnityEngine;
 public class RewardData : ScriptableObject
 {
     public string rewardId;
+    public string displayName;
     public Sprite icon;
 }

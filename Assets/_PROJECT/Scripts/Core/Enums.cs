@@ -1,11 +1,5 @@
 namespace Project.Core.Enums
 {
-    public enum WheelSliceType
-    {
-        Reward,
-        Bomb
-    }
-
     public enum ZoneType
     {
         Normal,
