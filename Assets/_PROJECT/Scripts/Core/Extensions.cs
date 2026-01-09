@@ -1,3 +1,4 @@
+using UnityEngine;
 using System.Collections.Generic;
 
 public static class Extensions
@@ -33,5 +34,11 @@ public static class Extensions
         {
             list.Add(null);
         }
+    }
+
+    public static Color SetColorWithoutAlpha(this Color color, Color newColor)
+    {
+        newColor.a = color.a;
+        return newColor;
     }
 }
