@@ -848,7 +848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &188844566
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3666,6 +3666,7 @@ GameObject:
   - component: {fileID: 1906442089}
   - component: {fileID: 1906442091}
   - component: {fileID: 1906442090}
+  - component: {fileID: 1906442092}
   m_Layer: 5
   m_Name: ui_image_flash
   m_TagString: Untagged
@@ -3730,6 +3731,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906442088}
   m_CullTransparentMesh: 1
+--- !u!114 &1906442092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906442088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d5e2062212e4111b305267faadb020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateLoop
+  euler: {x: 0, y: 0, z: -360}
+  duration: 10
 --- !u!1001 &1936744517
 PrefabInstance:
   m_ObjectHideFlags: 0

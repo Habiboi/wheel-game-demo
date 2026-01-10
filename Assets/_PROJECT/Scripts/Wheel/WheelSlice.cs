@@ -2,10 +2,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
-
 public class WheelSlice : MonoBehaviour
 {
     [SerializeField] private Image rewardImage;
@@ -14,11 +10,6 @@ public class WheelSlice : MonoBehaviour
 #if UNITY_EDITOR
     void OnValidate()
     {
-        if (EditorApplication.isPlaying)
-        {
-            return;
-        }
-
         if (rewardImage == null)
         {
             rewardImage = GetComponentInChildren<Image>();
@@ -28,8 +19,6 @@ public class WheelSlice : MonoBehaviour
         {
             rewardText = GetComponentInChildren<TextMeshProUGUI>();
         }
-
-        EditorUtility.SetDirty(this);
     }
 #endif
 }
