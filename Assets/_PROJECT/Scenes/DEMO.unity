@@ -2620,6 +2620,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1350865592480133374, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
+      propertyPath: m_text
+      value: 'SAFE
+
+        ZONE'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1350865592480133374, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
       propertyPath: m_fontColor.b
       value: 0
       objectReference: {fileID: 0}
@@ -4147,6 +4153,12 @@ PrefabInstance:
     - target: {fileID: 419675018540809079, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1350865592480133374, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
+      propertyPath: m_text
+      value: 'SUPER
+
+        ZONE'
       objectReference: {fileID: 0}
     - target: {fileID: 1350865592480133374, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
       propertyPath: m_fontColor.b
