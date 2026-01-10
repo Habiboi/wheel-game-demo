@@ -10,15 +10,8 @@ public class WheelSlice : MonoBehaviour
 #if UNITY_EDITOR
     void OnValidate()
     {
-        if (rewardImage == null)
-        {
-            rewardImage = GetComponentInChildren<Image>();
-        }
-
-        if (rewardText == null)
-        {
-            rewardText = GetComponentInChildren<TextMeshProUGUI>();
-        }
+        rewardImage ??= GetComponentInChildren<Image>();
+        rewardText ??= GetComponentInChildren<TextMeshProUGUI>();
     }
 #endif
 }
