@@ -341,7 +341,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1197305291338295718, guid: b146746ce33034093b1ef406b923fda5, type: 3}
       propertyPath: m_Name
-      value: ui_inventory_stat (2)
+      value: ui_inventory_stat_chest_standard
       objectReference: {fileID: 0}
     - target: {fileID: 2132477283196520446, guid: b146746ce33034093b1ef406b923fda5, type: 3}
       propertyPath: rewardData
@@ -437,17 +437,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7427191422209984327, guid: b146746ce33034093b1ef406b923fda5, type: 3}
   m_PrefabInstance: {fileID: 47863786}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &47863788 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2132477283196520446, guid: b146746ce33034093b1ef406b923fda5, type: 3}
-  m_PrefabInstance: {fileID: 47863786}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8acc097a67a4406bbb2ca6a15717a28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WheelInventoryStat
 --- !u!1 &66809118
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +539,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1197305291338295718, guid: b146746ce33034093b1ef406b923fda5, type: 3}
       propertyPath: m_Name
-      value: ui_inventory_stat (3)
+      value: ui_inventory_stat_chest_super
       objectReference: {fileID: 0}
     - target: {fileID: 2132477283196520446, guid: b146746ce33034093b1ef406b923fda5, type: 3}
       propertyPath: rewardData
@@ -646,17 +635,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7427191422209984327, guid: b146746ce33034093b1ef406b923fda5, type: 3}
   m_PrefabInstance: {fileID: 139726390}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &139726392 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2132477283196520446, guid: b146746ce33034093b1ef406b923fda5, type: 3}
-  m_PrefabInstance: {fileID: 139726390}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8acc097a67a4406bbb2ca6a15717a28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WheelInventoryStat
 --- !u!1 &168867877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1656,7 +1634,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 709611903}
-  - component: {fileID: 709611904}
   m_Layer: 5
   m_Name: ui_inventory
   m_TagString: Untagged
@@ -1685,23 +1662,6 @@ RectTransform:
   m_AnchoredPosition: {x: 55, y: 0}
   m_SizeDelta: {x: 350, y: 800}
   m_Pivot: {x: 0, y: 0.5}
---- !u!114 &709611904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 709611902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d32698218ac14c41bf2e4d9993b280d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WheelInventory
-  stats:
-  - {fileID: 1574690354194555300}
-  - {fileID: 1093486938}
-  - {fileID: 47863788}
-  - {fileID: 139726392}
 --- !u!1 &737908603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2400,7 +2360,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1197305291338295718, guid: b146746ce33034093b1ef406b923fda5, type: 3}
       propertyPath: m_Name
-      value: ui_inventory_stat (1)
+      value: ui_inventory_stat_gold
       objectReference: {fileID: 0}
     - target: {fileID: 2132477283196520446, guid: b146746ce33034093b1ef406b923fda5, type: 3}
       propertyPath: rewardData
@@ -2496,17 +2456,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7427191422209984327, guid: b146746ce33034093b1ef406b923fda5, type: 3}
   m_PrefabInstance: {fileID: 1093486936}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1093486938 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2132477283196520446, guid: b146746ce33034093b1ef406b923fda5, type: 3}
-  m_PrefabInstance: {fileID: 1093486936}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8acc097a67a4406bbb2ca6a15717a28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WheelInventoryStat
 --- !u!1 &1177088818
 GameObject:
   m_ObjectHideFlags: 0
@@ -2537,9 +2486,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WheelManager
   zoneRuleData: {fileID: 11400000, guid: 7c8d3d2cf8fd34353b3f5156fd0f16fc, type: 2}
-  wheelNextZones:
-  - {fileID: 1446055966}
-  - {fileID: 8326942387465178020}
 --- !u!4 &1177088820
 Transform:
   m_ObjectHideFlags: 0
@@ -2744,6 +2690,10 @@ PrefabInstance:
       propertyPath: zoneType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1464801522556083226, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
+      propertyPath: presetData
+      value: 
+      objectReference: {fileID: 11400000, guid: ac9b40d423c8d4d1895bde045be56ff3, type: 2}
     - target: {fileID: 2407995235782913238, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -2810,17 +2760,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 419675018540809079, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
   m_PrefabInstance: {fileID: 1446055964}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1446055966 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1464801522556083226, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
-  m_PrefabInstance: {fileID: 1446055964}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b889889bc4f6e45478ce86a21761ce9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WheelNextZone
 --- !u!1001 &1470637347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4100,7 +4039,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1197305291338295718, guid: b146746ce33034093b1ef406b923fda5, type: 3}
       propertyPath: m_Name
-      value: ui_inventory_stat
+      value: ui_inventory_stat_money
       objectReference: {fileID: 0}
     - target: {fileID: 2132477283196520446, guid: b146746ce33034093b1ef406b923fda5, type: 3}
       propertyPath: rewardData
@@ -4191,17 +4130,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b146746ce33034093b1ef406b923fda5, type: 3}
---- !u!114 &1574690354194555300 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2132477283196520446, guid: b146746ce33034093b1ef406b923fda5, type: 3}
-  m_PrefabInstance: {fileID: 1574690354194555299}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8acc097a67a4406bbb2ca6a15717a28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WheelInventoryStat
 --- !u!1001 &8326942387465178018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4316,6 +4244,10 @@ PrefabInstance:
       propertyPath: zoneType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1464801522556083226, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
+      propertyPath: presetData
+      value: 
+      objectReference: {fileID: 11400000, guid: bbe3109c9e4394469993c2998980e95f, type: 2}
     - target: {fileID: 2407995235782913238, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
       propertyPath: m_Color.b
       value: 0.007843138
@@ -4378,17 +4310,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 419675018540809079, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
   m_PrefabInstance: {fileID: 8326942387465178018}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8326942387465178020 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1464801522556083226, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
-  m_PrefabInstance: {fileID: 8326942387465178018}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b889889bc4f6e45478ce86a21761ce9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WheelNextZone
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class WheelSlice : MonoBehaviour
     [SerializeField] private TextMeshProUGUI rewardText;
     [SerializeField] private GameObject uiPanel, bombPanel;
 
+    private WheelSliceData currentData;
+
 #if UNITY_EDITOR
     void OnValidate()
     {
@@ -34,7 +36,15 @@ public class WheelSlice : MonoBehaviour
             return;
         }
 
-        uiPanel.transform.DOScale(1.5f, 0.4f).SetLoops(2, LoopType.Yoyo).SetEase(Ease.OutExpo).SetDelay(0.2f);
+        bool collected = false;
+        uiPanel.transform.DOScale(1.5f, 0.4f).SetLoops(2, LoopType.Yoyo).SetEase(Ease.OutExpo).SetDelay(0.2f).OnStepComplete(() =>
+        {
+            if (!collected)
+            {
+                EventManager.sliceCollected.Invoke(currentData);
+                collected = true;
+            }
+        });
     }
 
     public void SetSlice(WheelSliceData data)
@@ -42,6 +52,7 @@ public class WheelSlice : MonoBehaviour
         SetBomb(false);
         rewardImage.sprite = data.rewardData.icon;
         rewardText.text = data.rewardAmount.GetRewardText();
+        currentData = data;
     }
 
     public void SetBomb(bool isActive)

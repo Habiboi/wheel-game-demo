@@ -4,44 +4,39 @@ using UnityEngine;
 
 public class WheelNextZone : MonoBehaviour
 {
-    [SerializeField] private ZoneType zoneType;
+    [SerializeField] private WheelPresetData presetData;
     [SerializeField] private TextMeshProUGUI counterText;
-
-    public ZoneType ZoneType { get => zoneType; }
 
 #if UNITY_EDITOR
     void OnValidate()
     {
         counterText ??= transform.Find("ui_text_counter")?.GetComponent<TextMeshProUGUI>();
-
-        if (transform.name.EndsWith("super"))
-        {
-            zoneType = ZoneType.Super;
-        }
-        else if (transform.name.EndsWith("safe"))
-        {
-            zoneType = ZoneType.Safe;
-        }
     }
 #endif
 
     private void OnEnable()
     {
+        EventManager.wheelStarted.AddListener(OnWheelStarted);
         EventManager.zoneStarted.AddListener(OnZoneStarted);
     }
     private void OnDisable()
     {
+        EventManager.wheelStarted.RemoveListener(OnWheelStarted);
         EventManager.zoneStarted.RemoveListener(OnZoneStarted);
     }
-    private void OnZoneStarted(int zoneIndex, WheelPresetData presetData)
+    private void OnWheelStarted()
     {
-        if (presetData.zoneType.Equals(zoneType))
+        SetNextZone(presetData.interval);
+    }
+    private void OnZoneStarted(int zoneIndex, WheelPresetData zonePresetData)
+    {
+        if (zonePresetData.Equals(presetData))
         {
             SetNextZone(zoneIndex + presetData.interval);
         }
     }
 
-    public void SetNextZone(int nextZoneIndex)
+    private void SetNextZone(int nextZoneIndex)
     {
         counterText.text = nextZoneIndex.ToString();
     }
