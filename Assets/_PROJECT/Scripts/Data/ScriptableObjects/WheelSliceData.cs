@@ -9,7 +9,4 @@ public class WheelSliceData : ScriptableObject
 
     [Min(1)]
     public int rewardAmount;
-
-    [Header("Visual")]
-    public Sprite icon;
 }

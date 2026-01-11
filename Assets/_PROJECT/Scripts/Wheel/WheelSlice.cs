@@ -15,9 +15,9 @@ public class WheelSlice : MonoBehaviour
     }
 #endif
 
-    public void SetSlice(Sprite rewardSprite, int rewardAmount)
+    public void SetSlice(WheelSliceData data)
     {
-        rewardImage.sprite = rewardSprite;
-        rewardText.text = rewardAmount.ToString();
+        rewardImage.sprite = data.rewardData.icon;
+        rewardText.text = data.rewardAmount.GetRewardText();
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,13 +28,13 @@ public class Wheel : MonoBehaviour
     }
     private void OnZoneStarted(WheelPresetData presetData)
     {
-        SetWheel(presetData.spinSprite, presetData.indicatorSprite);
+        SetWheel(presetData.spinSprite, presetData.indicatorSprite, presetData.availableSlices);
     }
 
-    private void SetWheel(Sprite spinSprite, Sprite indicatorSprite)
+    private void SetWheel(Sprite spinSprite, Sprite indicatorSprite, List<WheelSliceData> sliceDatas)
     {
         SetVisuals(spinSprite, indicatorSprite);
-        SetSlices();
+        SetSlices(sliceDatas);
     }
 
     private void SetVisuals(Sprite spinSprite, Sprite indicatorSprite)
@@ -42,11 +43,12 @@ public class Wheel : MonoBehaviour
         indicatorImage.sprite = indicatorSprite;
     }
 
-    private void SetSlices()
+    private void SetSlices(List<WheelSliceData> sliceDatas)
     {
         foreach (var slice in slices)
         {
-            //slice.SetSlice();
+            var sliceData = sliceDatas.GetRandomElement();
+            slice.SetSlice(sliceData);
         }
     }
 }

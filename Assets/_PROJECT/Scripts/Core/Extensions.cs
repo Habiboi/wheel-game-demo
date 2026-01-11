@@ -36,6 +36,11 @@ public static class Extensions
         }
     }
 
+    public static T GetRandomElement<T>(this IList<T> collection)
+    {
+        return collection[Random.Range(0, collection.Count)];
+    }
+
     public static Color SetColorWithoutAlpha(this Color color, Color newColor)
     {
         newColor.a = color.a;
@@ -54,4 +59,23 @@ public static class Extensions
         return $"<alpha=#{a:X2}>{text}</alpha>";
     }
 
+    private static readonly (int Threshold, int Divisor, string Suffix)[] REWARD_FORMAT =
+    {
+    (1_000_000_000, 1_000_000_000, "B"),
+    (1_000_000,     1_000_000,     "M"),
+    (1_000,         1_000,         "K"),
+    };
+
+    public static string GetRewardText(this int value)
+    {
+        foreach (var (threshold, divisor, suffix) in REWARD_FORMAT)
+        {
+            if (value >= threshold)
+            {
+                return $"x{value / divisor}{suffix}";
+            }
+        }
+
+        return $"x{value}";
+    }
 }
