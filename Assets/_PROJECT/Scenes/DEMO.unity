@@ -343,10 +343,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ui_inventory_stat (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 5801088984316100695, guid: b146746ce33034093b1ef406b923fda5, type: 3}
-      propertyPath: m_Sprite
+    - target: {fileID: 2132477283196520446, guid: b146746ce33034093b1ef406b923fda5, type: 3}
+      propertyPath: rewardData
       value: 
-      objectReference: {fileID: 21300000, guid: c0dc77f990631432aba234658fcecf36, type: 3}
+      objectReference: {fileID: 11400000, guid: 07afce54b80e6479f9bb044a848b4c7b, type: 2}
     - target: {fileID: 7427191422209984327, guid: b146746ce33034093b1ef406b923fda5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -552,10 +552,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ui_inventory_stat (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 5801088984316100695, guid: b146746ce33034093b1ef406b923fda5, type: 3}
-      propertyPath: m_Sprite
+    - target: {fileID: 2132477283196520446, guid: b146746ce33034093b1ef406b923fda5, type: 3}
+      propertyPath: rewardData
       value: 
-      objectReference: {fileID: 21300000, guid: c5b2a94d5fdbe49708b198c9598dfe26, type: 3}
+      objectReference: {fileID: 11400000, guid: cef9770cc3c40406d83725dbbffa2254, type: 2}
     - target: {fileID: 7427191422209984327, guid: b146746ce33034093b1ef406b923fda5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2402,10 +2402,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ui_inventory_stat (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5801088984316100695, guid: b146746ce33034093b1ef406b923fda5, type: 3}
-      propertyPath: m_Sprite
+    - target: {fileID: 2132477283196520446, guid: b146746ce33034093b1ef406b923fda5, type: 3}
+      propertyPath: rewardData
       value: 
-      objectReference: {fileID: 21300000, guid: 829088a4688c14da39ce35bc6454672e, type: 3}
+      objectReference: {fileID: 11400000, guid: 39d9a5a2c57a343da9dbd5c449d871ee, type: 2}
     - target: {fileID: 7427191422209984327, guid: b146746ce33034093b1ef406b923fda5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2537,6 +2537,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WheelManager
   zoneRuleData: {fileID: 11400000, guid: 7c8d3d2cf8fd34353b3f5156fd0f16fc, type: 2}
+  wheelNextZones:
+  - {fileID: 1446055966}
+  - {fileID: 8326942387465178020}
 --- !u!4 &1177088820
 Transform:
   m_ObjectHideFlags: 0
@@ -2807,6 +2810,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 419675018540809079, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
   m_PrefabInstance: {fileID: 1446055964}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1446055966 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1464801522556083226, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
+  m_PrefabInstance: {fileID: 1446055964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b889889bc4f6e45478ce86a21761ce9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WheelNextZone
 --- !u!1001 &1470637347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4088,10 +4102,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ui_inventory_stat
       objectReference: {fileID: 0}
-    - target: {fileID: 5801088984316100695, guid: b146746ce33034093b1ef406b923fda5, type: 3}
-      propertyPath: m_Sprite
+    - target: {fileID: 2132477283196520446, guid: b146746ce33034093b1ef406b923fda5, type: 3}
+      propertyPath: rewardData
       value: 
-      objectReference: {fileID: 21300000, guid: b3d3bb578cb77433e847cdbfab8dae08, type: 3}
+      objectReference: {fileID: 11400000, guid: 2ce53ce6b35ca4ec28116dbbe7b60efa, type: 2}
     - target: {fileID: 7427191422209984327, guid: b146746ce33034093b1ef406b923fda5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4364,6 +4378,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 419675018540809079, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
   m_PrefabInstance: {fileID: 8326942387465178018}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8326942387465178020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1464801522556083226, guid: 8ffc507ca023c4fb7a659b74dbcc2d89, type: 3}
+  m_PrefabInstance: {fileID: 8326942387465178018}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b889889bc4f6e45478ce86a21761ce9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WheelNextZone
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

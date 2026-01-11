@@ -1,3 +1,4 @@
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +18,24 @@ public class WheelSlice : MonoBehaviour
         bombPanel ??= transform.Find("ui_image_bomb")?.gameObject;
     }
 #endif
+
+    private void OnEnable()
+    {
+        EventManager.sliceSelected.AddListener(OnSliceSelected);
+    }
+    private void OnDisable()
+    {
+        EventManager.sliceSelected.RemoveListener(OnSliceSelected);
+    }
+    private void OnSliceSelected(WheelSlice slice)
+    {
+        if (slice != this)
+        {
+            return;
+        }
+
+        uiPanel.transform.DOScale(1.5f, 0.4f).SetLoops(2, LoopType.Yoyo).SetEase(Ease.OutExpo).SetDelay(0.2f);
+    }
 
     public void SetSlice(WheelSliceData data)
     {

@@ -10,6 +10,7 @@ public class Wheel : MonoBehaviour
     [SerializeField] private WheelSlice[] slices;
 
     private RectTransform wheelTransform;
+    private WheelSlice selectedSlice;
 
 #if UNITY_EDITOR
     void OnValidate()
@@ -74,7 +75,10 @@ public class Wheel : MonoBehaviour
 
     private void Spin()
     {
-        SpinToIndex(slices.GetRandomIndex());
+        spinButton.interactable = false;
+        int sliceIndex = slices.GetRandomIndex();
+        selectedSlice = slices[sliceIndex];
+        SpinToIndex(sliceIndex);
     }
 
     private void SpinToIndex(int index)
@@ -82,10 +86,14 @@ public class Wheel : MonoBehaviour
         float stepAngle = 360f / slices.Length;
         float targetAngle = index * stepAngle;
         float currentAngle = wheelTransform.localEulerAngles.z;
-        float fullRotations = 360f * 2f;
+        float fullRotations = -360f * 2;
 
         float finalAngle = currentAngle + fullRotations + Mathf.DeltaAngle(currentAngle, targetAngle);
 
-        wheelTransform.DOLocalRotate(Vector3.forward * finalAngle, 2.6f, RotateMode.FastBeyond360).SetEase(Ease.InOutBack);
+        wheelTransform.DOLocalRotate(Vector3.forward * finalAngle, 2.6f, RotateMode.FastBeyond360).SetEase(Ease.InOutBack).OnComplete(() =>
+        {
+            EventManager.sliceSelected.Invoke(selectedSlice);
+            DOVirtual.DelayedCall(1f, () => spinButton.interactable = true);
+        });
     }
 }
