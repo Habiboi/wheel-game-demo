@@ -20,4 +20,8 @@ public class WheelPresetData : ScriptableObject
 
     [Header("Bomb Settings")]
     public bool allowBomb;
+
+    [Header("Visuals")]
+    public Sprite spinSprite;
+    public Sprite indicatorSprite;
 }

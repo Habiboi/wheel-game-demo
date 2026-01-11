@@ -17,9 +17,22 @@ public class Wheel : MonoBehaviour
     }
 #endif
 
-    private void SetWheel()
+    private void OnEnable()
     {
-        //SetVisuals();
+        EventManager.zoneStarted.AddListener(OnZoneStarted);
+    }
+    private void OnDisable()
+    {
+        EventManager.zoneStarted.RemoveListener(OnZoneStarted);
+    }
+    private void OnZoneStarted(WheelPresetData presetData)
+    {
+        SetWheel(presetData.spinSprite, presetData.indicatorSprite);
+    }
+
+    private void SetWheel(Sprite spinSprite, Sprite indicatorSprite)
+    {
+        SetVisuals(spinSprite, indicatorSprite);
         SetSlices();
     }
 
