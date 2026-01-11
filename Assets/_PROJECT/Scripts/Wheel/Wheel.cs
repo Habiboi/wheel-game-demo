@@ -16,4 +16,24 @@ public class Wheel : MonoBehaviour
         slices = GetComponentsInChildren<WheelSlice>();
     }
 #endif
+
+    private void SetWheel()
+    {
+        //SetVisuals();
+        SetSlices();
+    }
+
+    private void SetVisuals(Sprite spinSprite, Sprite indicatorSprite)
+    {
+        spinImage.sprite = spinSprite;
+        indicatorImage.sprite = indicatorSprite;
+    }
+
+    private void SetSlices()
+    {
+        foreach (var slice in slices)
+        {
+            //slice.SetSlice();
+        }
+    }
 }

@@ -1,3 +1,4 @@
+using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,4 +16,28 @@ public class WheelZoneCounter : MonoBehaviour
         frameImage ??= transform.Find("ui_image_frame")?.GetComponent<Image>();
     }
 #endif
+
+    private StringBuilder stringBuilder = new();
+    private int additionalZoneCount = 5;
+    private const string SPACE = " ";
+    private const string FORMAT = "00";
+
+    private void SetZoneCounts(int currentCount)
+    {
+        stringBuilder.Clear();
+
+        for (int i = currentCount - additionalZoneCount; i < currentCount + additionalZoneCount; i++)
+        {
+            stringBuilder.Append(FormatZoneNumber(i));
+            stringBuilder.Append(SPACE);
+        }
+        stringBuilder.Append(FormatZoneNumber(currentCount + additionalZoneCount));
+
+        countsText.text = stringBuilder.ToString();
+    }
+
+    private string FormatZoneNumber(int value)
+    {
+        return Mathf.Clamp(value, 0, value).ToString(FORMAT);
+    }
 }

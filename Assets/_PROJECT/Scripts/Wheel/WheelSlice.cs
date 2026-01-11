@@ -14,4 +14,10 @@ public class WheelSlice : MonoBehaviour
         rewardText ??= GetComponentInChildren<TextMeshProUGUI>();
     }
 #endif
+
+    public void SetSlice(Sprite rewardSprite, int rewardAmount)
+    {
+        rewardImage.sprite = rewardSprite;
+        rewardText.text = rewardAmount.ToString();
+    }
 }

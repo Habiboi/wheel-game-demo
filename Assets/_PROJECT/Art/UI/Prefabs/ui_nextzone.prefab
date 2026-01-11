@@ -213,7 +213,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278354918
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -286,6 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 419675018540809079}
   - component: {fileID: 7011968426873972827}
+  - component: {fileID: 1464801522556083226}
   m_Layer: 5
   m_Name: ui_nextzone
   m_TagString: Untagged
@@ -329,6 +330,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIColorChanger
   color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1464801522556083226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919066556643174605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b889889bc4f6e45478ce86a21761ce9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WheelNextZone
+  counterText: {fileID: 4208102186343636821}
 --- !u!1 &6151114862390886918
 GameObject:
   m_ObjectHideFlags: 0

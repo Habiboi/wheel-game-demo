@@ -41,4 +41,17 @@ public static class Extensions
         newColor.a = color.a;
         return newColor;
     }
+
+    public static string SetColor(this string text, Color color)
+    {
+        string hex = ColorUtility.ToHtmlStringRGB(color);
+        return $"<color=#{hex}>{text}</color>";
+    }
+
+    public static string SetAlpha(this string text, float alpha)
+    {
+        int a = Mathf.RoundToInt(Mathf.Clamp01(alpha) * 255f);
+        return $"<alpha=#{a:X2}>{text}</alpha>";
+    }
+
 }
