@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fc56193b99a4b44831d272df4656f1, type: 3}
   m_Name: wheel_preset_1_silver
   m_EditorClassIdentifier: Assembly-CSharp::WheelPresetData
-  spinType: 1
+  zoneType: 1
   interval: 5
   slotCount: 8
   availableSlices:

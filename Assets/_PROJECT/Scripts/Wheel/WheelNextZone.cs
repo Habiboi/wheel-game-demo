@@ -7,6 +7,8 @@ public class WheelNextZone : MonoBehaviour
     [SerializeField] private ZoneType zoneType;
     [SerializeField] private TextMeshProUGUI counterText;
 
+    public ZoneType ZoneType { get => zoneType; }
+
 #if UNITY_EDITOR
     void OnValidate()
     {
@@ -22,4 +24,25 @@ public class WheelNextZone : MonoBehaviour
         }
     }
 #endif
+
+    private void OnEnable()
+    {
+        EventManager.zoneStarted.AddListener(OnZoneStarted);
+    }
+    private void OnDisable()
+    {
+        EventManager.zoneStarted.RemoveListener(OnZoneStarted);
+    }
+    private void OnZoneStarted(int zoneIndex, WheelPresetData presetData)
+    {
+        if (presetData.zoneType.Equals(zoneType))
+        {
+            SetNextZone(zoneIndex + presetData.interval);
+        }
+    }
+
+    public void SetNextZone(int nextZoneIndex)
+    {
+        counterText.text = nextZoneIndex.ToString();
+    }
 }

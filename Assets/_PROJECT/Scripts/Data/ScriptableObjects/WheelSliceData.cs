@@ -1,4 +1,3 @@
-using Project.Core.Enums;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "WheelSliceData", menuName = "Scriptable Objects/WheelSliceData")]

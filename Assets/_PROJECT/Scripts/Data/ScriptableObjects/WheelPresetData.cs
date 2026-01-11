@@ -6,7 +6,7 @@ using UnityEngine;
 public class WheelPresetData : ScriptableObject
 {
     [Header("Preset Info")]
-    public SpinType spinType;
+    public ZoneType zoneType;
 
     [Min(1)]
     public int interval = 1;

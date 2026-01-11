@@ -1,12 +1,5 @@
 namespace Project.Core.Enums
 {
-    public enum ZoneType
-    {
-        Normal,
-        Safe,
-        Super
-    }
-
     public enum GameState
     {
         Idle,
@@ -16,10 +9,10 @@ namespace Project.Core.Enums
         GameOver
     }
 
-    public enum SpinType
+    public enum ZoneType
     {
         Normal,
-        Silver,
-        Gold
+        Safe,
+        Super
     }
 }
