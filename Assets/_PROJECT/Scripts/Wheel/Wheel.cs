@@ -28,13 +28,18 @@ public class Wheel : MonoBehaviour
     }
     private void OnZoneStarted(WheelPresetData presetData)
     {
-        SetWheel(presetData.spinSprite, presetData.indicatorSprite, presetData.availableSlices);
+        SetWheel(presetData.spinSprite, presetData.indicatorSprite, presetData.availableSlices, presetData.allowBomb);
     }
 
-    private void SetWheel(Sprite spinSprite, Sprite indicatorSprite, List<WheelSliceData> sliceDatas)
+    private void SetWheel(Sprite spinSprite, Sprite indicatorSprite, List<WheelSliceData> sliceDatas, bool allowBomb)
     {
         SetVisuals(spinSprite, indicatorSprite);
         SetSlices(sliceDatas);
+
+        if (allowBomb)
+        {
+            SetBomb();
+        }
     }
 
     private void SetVisuals(Sprite spinSprite, Sprite indicatorSprite)
@@ -50,5 +55,10 @@ public class Wheel : MonoBehaviour
             var sliceData = sliceDatas.GetRandomElement();
             slice.SetSlice(sliceData);
         }
+    }
+
+    private void SetBomb()
+    {
+        slices.GetRandomElement().SetBomb(true);
     }
 }

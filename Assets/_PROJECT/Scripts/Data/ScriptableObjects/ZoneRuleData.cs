@@ -7,6 +7,7 @@ public class ZoneRuleData : ScriptableObject
 {
     public List<WheelPresetData> presets = new();
 
+#if UNITY_EDITOR
     void OnValidate()
     {
         if (presets == null)
@@ -20,4 +21,5 @@ public class ZoneRuleData : ScriptableObject
         presets = presets.OrderByDescending(x => x.interval).ToList();
         presets.AddNulls(nullCount);
     }
+#endif
 }
