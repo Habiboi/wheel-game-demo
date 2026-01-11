@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public static class Extensions
 {
@@ -39,6 +40,11 @@ public static class Extensions
     public static T GetRandomElement<T>(this IList<T> collection)
     {
         return collection[Random.Range(0, collection.Count)];
+    }
+
+    public static int GetRandomIndex(this IList list)
+    {
+        return Random.Range(0, list.Count);
     }
 
     public static Color SetColorWithoutAlpha(this Color color, Color newColor)

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,8 @@ public class Wheel : MonoBehaviour
     [SerializeField] private Button spinButton;
     [SerializeField] private WheelSlice[] slices;
 
+    private RectTransform wheelTransform;
+
 #if UNITY_EDITOR
     void OnValidate()
     {
@@ -15,8 +18,15 @@ public class Wheel : MonoBehaviour
         indicatorImage ??= transform.Find("ui_image_indicator")?.GetComponent<Image>();
         spinButton ??= transform.Find("ui_button_spin")?.GetComponent<Button>();
         slices = GetComponentsInChildren<WheelSlice>();
+
+        spinButton.onClick.AddListener(Spin);
     }
 #endif
+
+    private void Awake()
+    {
+        wheelTransform = spinImage.rectTransform;
+    }
 
     private void OnEnable()
     {
@@ -60,5 +70,22 @@ public class Wheel : MonoBehaviour
     private void SetBomb()
     {
         slices.GetRandomElement().SetBomb(true);
+    }
+
+    private void Spin()
+    {
+        SpinToIndex(slices.GetRandomIndex());
+    }
+
+    private void SpinToIndex(int index)
+    {
+        float stepAngle = 360f / slices.Length;
+        float targetAngle = index * stepAngle;
+        float currentAngle = wheelTransform.localEulerAngles.z;
+        float fullRotations = 360f * 2f;
+
+        float finalAngle = currentAngle + fullRotations + Mathf.DeltaAngle(currentAngle, targetAngle);
+
+        wheelTransform.DOLocalRotate(Vector3.forward * finalAngle, 2.6f, RotateMode.FastBeyond360).SetEase(Ease.InOutBack);
     }
 }
