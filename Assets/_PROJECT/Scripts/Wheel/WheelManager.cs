@@ -22,7 +22,7 @@ public class WheelManager : MonoBehaviour
 
     private void SetZone()
     {
-        EventManager.zoneStarted.Invoke(GetPresetData());
+        EventManager.zoneStarted.Invoke(currentZone ,GetPresetData());
     }
 
     private WheelPresetData GetPresetData()

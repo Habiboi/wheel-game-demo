@@ -22,6 +22,19 @@ public class WheelZoneCounter : MonoBehaviour
     private const string SPACE = " ";
     private const string FORMAT = "00";
 
+    private void OnEnable()
+    {
+        EventManager.zoneStarted.AddListener(OnZoneStarted);
+    }
+    private void OnDisable()
+    {
+        EventManager.zoneStarted.RemoveListener(OnZoneStarted);
+    }
+    private void OnZoneStarted(int zoneIndex, WheelPresetData presetData)
+    {
+        SetZoneCounts(zoneIndex);
+    }
+
     private void SetZoneCounts(int currentCount)
     {
         stringBuilder.Clear();

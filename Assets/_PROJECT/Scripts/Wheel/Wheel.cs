@@ -26,7 +26,7 @@ public class Wheel : MonoBehaviour
     {
         EventManager.zoneStarted.RemoveListener(OnZoneStarted);
     }
-    private void OnZoneStarted(WheelPresetData presetData)
+    private void OnZoneStarted(int zoneIndex, WheelPresetData presetData)
     {
         SetWheel(presetData.spinSprite, presetData.indicatorSprite, presetData.availableSlices, presetData.allowBomb);
     }
