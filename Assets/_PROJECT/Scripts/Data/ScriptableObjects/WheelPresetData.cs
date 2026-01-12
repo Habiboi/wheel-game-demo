@@ -16,7 +16,15 @@ public class WheelPresetData : ScriptableObject
     public int slotCount = 8;
 
     [Header("Available Slices")]
-    public List<WheelSliceData> availableSlices;
+    public List<WheelSliceEntry> wheelSliceEntries;
+
+    [System.Serializable]
+    public struct WheelSliceEntry
+    {
+        public WheelSliceData sliceData;
+        [Range(1, 100)]
+        public int weight;
+    }
 
     [Header("Bomb Settings")]
     public bool allowBomb;

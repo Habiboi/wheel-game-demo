@@ -23,6 +23,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b0e6960348a18441fbad9bf7398f6b67, type: 2}
   - {fileID: 11400000, guid: ebd67e030cc5f44f9966f3b6fc5e157c, type: 2}
   - {fileID: 11400000, guid: 926b2adfe6e86401780d018a41f59c33, type: 2}
+  wheelSliceEntries:
+  - sliceData: {fileID: 11400000, guid: deffeeba99c4045e9bf5975811e4361f, type: 2}
+    weight: 50
+  - sliceData: {fileID: 11400000, guid: 7bf288cfc85e6432abe4a40b1e485f0f, type: 2}
+    weight: 50
+  - sliceData: {fileID: 11400000, guid: 4ab443f4d2fa246da92b989af3dfef18, type: 2}
+    weight: 50
+  - sliceData: {fileID: 11400000, guid: 669b5168babb94cab864b65a51a0dede, type: 2}
+    weight: 50
+  - sliceData: {fileID: 11400000, guid: b0e6960348a18441fbad9bf7398f6b67, type: 2}
+    weight: 50
+  - sliceData: {fileID: 11400000, guid: ebd67e030cc5f44f9966f3b6fc5e157c, type: 2}
+    weight: 50
+  - sliceData: {fileID: 11400000, guid: 926b2adfe6e86401780d018a41f59c33, type: 2}
+    weight: 50
   allowBomb: 1
   spinSprite: {fileID: 21300000, guid: 143418fd274554636891fbc4e505edcf, type: 3}
   indicatorSprite: {fileID: 21300000, guid: 9eb8b375aa36b462b85edfbb345c332a, type: 3}

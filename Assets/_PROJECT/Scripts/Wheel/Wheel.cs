@@ -39,11 +39,11 @@ public class Wheel : MonoBehaviour
     }
     private void OnZoneStarted(int zoneIndex, WheelPresetData presetData)
     {
-        SetWheel(zoneIndex, presetData.spinSprite, presetData.indicatorSprite, presetData.availableSlices, presetData.allowBomb);
+        SetWheel(zoneIndex, presetData.spinSprite, presetData.indicatorSprite, presetData.wheelSliceEntries, presetData.allowBomb);
         spinButton.interactable = true;
     }
 
-    private void SetWheel(int zoneIndex, Sprite spinSprite, Sprite indicatorSprite, List<WheelSliceData> sliceDatas, bool allowBomb)
+    private void SetWheel(int zoneIndex, Sprite spinSprite, Sprite indicatorSprite, List<WheelPresetData.WheelSliceEntry> sliceDatas, bool allowBomb)
     {
         SetVisuals(spinSprite, indicatorSprite);
         SetSlices(sliceDatas, zoneIndex);
@@ -60,12 +60,12 @@ public class Wheel : MonoBehaviour
         indicatorImage.sprite = indicatorSprite;
     }
 
-    private void SetSlices(List<WheelSliceData> sliceDatas, int zoneIndex)
+    private void SetSlices(List<WheelPresetData.WheelSliceEntry> sliceEntries, int zoneIndex)
     {
         foreach (var slice in slices)
         {
-            var sliceData = sliceDatas.GetRandomElement();
-            slice.SetSlice(sliceData, zoneIndex);
+            var selectedEntry = sliceEntries.GetWeightedRandomElement(entry => entry.weight);
+            slice.SetSlice(selectedEntry.sliceData, zoneIndex);
         }
     }
 

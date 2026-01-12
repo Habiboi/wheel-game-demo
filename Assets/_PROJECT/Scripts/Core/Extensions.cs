@@ -37,6 +37,28 @@ public static class Extensions
         }
     }
 
+    public static T GetWeightedRandomElement<T>(this IList<T> collection, System.Func<T, int> weightSelector)
+    {
+        int totalWeight = 0;
+        foreach (var item in collection)
+        {
+            totalWeight += weightSelector(item);
+        }
+
+        int randomWeight = Random.Range(0, totalWeight);
+        int currentWeight = 0;
+
+        foreach (var item in collection)
+        {
+            currentWeight += weightSelector(item);
+            if (randomWeight < currentWeight)
+            {
+                return item;
+            }
+        }
+        return collection.Count > 0 ? collection[0] : default;
+    }
+
     public static T GetRandomElement<T>(this IList<T> collection)
     {
         return collection[Random.Range(0, collection.Count)];
