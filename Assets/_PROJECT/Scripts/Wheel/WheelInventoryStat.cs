@@ -39,7 +39,7 @@ public class WheelInventoryStat : MonoBehaviour
     }
     private void OnSliceCollected(WheelSliceData data)
     {
-        if (!data.rewardData.Equals(rewardData))
+        if (!rewardData.Equals(data.rewardData))
         {
             return;
         }
@@ -50,7 +50,7 @@ public class WheelInventoryStat : MonoBehaviour
     private const string FORMAT = "N0";
     private void SetAmount(int newAmount)
     {
-        amountText.text = amount.ToString(FORMAT);
+        amountText.text = newAmount.ToString(FORMAT);
         amount = newAmount;
     }
 }
