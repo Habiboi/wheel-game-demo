@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fc56193b99a4b44831d272df4656f1, type: 3}
   m_Name: wheel_preset_0_normal
   m_EditorClassIdentifier: Assembly-CSharp::WheelPresetData
-  spinType: 0
+  zoneType: 0
   interval: 1
   slotCount: 8
   availableSlices:
@@ -26,3 +26,5 @@ MonoBehaviour:
   allowBomb: 1
   spinSprite: {fileID: 21300000, guid: 143418fd274554636891fbc4e505edcf, type: 3}
   indicatorSprite: {fileID: 21300000, guid: 9eb8b375aa36b462b85edfbb345c332a, type: 3}
+  currentSprite: {fileID: 21300000, guid: 7ce4b9781f4144fc7a16a0bf55ac1dc3, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}

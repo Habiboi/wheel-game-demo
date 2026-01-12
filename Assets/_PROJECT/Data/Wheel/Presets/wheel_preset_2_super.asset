@@ -27,4 +27,5 @@ MonoBehaviour:
   allowBomb: 0
   spinSprite: {fileID: 21300000, guid: da8f7398db51547c2a04f7ec106ff5f5, type: 3}
   indicatorSprite: {fileID: 21300000, guid: 0734db12301c2459594f7ad909224402, type: 3}
+  currentSprite: {fileID: 21300000, guid: 2c79c46db32e1497e9fcec68f9d8bf0e, type: 3}
   color: {r: 0.9019608, g: 0.5137255, b: 0.007843138, a: 1}

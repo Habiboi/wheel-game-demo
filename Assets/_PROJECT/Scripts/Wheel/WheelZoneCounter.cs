@@ -1,4 +1,5 @@
 using System.Text;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,7 +35,21 @@ public class WheelZoneCounter : MonoBehaviour
     }
     private void OnZoneStarted(int zoneIndex, WheelPresetData presetData)
     {
-        SetZoneCounts(zoneIndex);
+        SetVisuals(zoneIndex, presetData.currentSprite);
+    }
+
+    private void SetVisuals(int zoneIndex, Sprite currentSprite)
+    {
+        bool setted = false;
+        frameImage.rectTransform.DOScale(1.15f, 0.25f).SetLoops(2, LoopType.Yoyo).SetEase(Ease.OutExpo).OnStepComplete(() =>
+        {
+            if (!setted)
+            {
+                setted = true;
+                SetZoneCounts(zoneIndex);
+                currentImage.sprite = currentSprite;
+            }
+        });
     }
 
     private void SetZoneCounts(int currentCount)
