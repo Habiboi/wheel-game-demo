@@ -11,6 +11,12 @@ public class WheelNextZone : MonoBehaviour
     void OnValidate()
     {
         counterText ??= transform.Find("ui_text_counter")?.GetComponent<TextMeshProUGUI>();
+
+        if (presetData != null && TryGetComponent<UIColorChanger>(out var colorChanger))
+        {
+            colorChanger.color = presetData.color;
+            colorChanger.SetColor();
+        }
     }
 #endif
 

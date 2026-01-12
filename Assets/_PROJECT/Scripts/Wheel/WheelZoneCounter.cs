@@ -7,6 +7,7 @@ public class WheelZoneCounter : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI countsText;
     [SerializeField] private Image currentImage, frameImage;
+    [SerializeField] private WheelManager wheelManager;
 
 #if UNITY_EDITOR
     void OnValidate()
@@ -14,6 +15,7 @@ public class WheelZoneCounter : MonoBehaviour
         countsText ??= transform.Find("ui_image_background")?.Find("ui_text_counts")?.GetComponent<TextMeshProUGUI>();
         currentImage ??= transform.Find("ui_image_background")?.Find("ui_image_current")?.GetComponent<Image>();
         frameImage ??= transform.Find("ui_image_frame")?.GetComponent<Image>();
+        wheelManager ??= FindAnyObjectByType<WheelManager>();
     }
 #endif
 
@@ -51,6 +53,6 @@ public class WheelZoneCounter : MonoBehaviour
 
     private string FormatZoneNumber(int value)
     {
-        return Mathf.Clamp(value, 0, value).ToString(FORMAT);
+        return Mathf.Clamp(value, 0, value).ToString(FORMAT).SetColor(wheelManager.GetZoneColor(value));
     }
 }

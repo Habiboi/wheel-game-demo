@@ -24,4 +24,5 @@ public class WheelPresetData : ScriptableObject
     [Header("Visuals")]
     public Sprite spinSprite;
     public Sprite indicatorSprite;
+    public Color color = Color.white;
 }

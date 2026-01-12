@@ -37,19 +37,29 @@ public class WheelManager : MonoBehaviour
 
     private void SetZone()
     {
-        EventManager.zoneStarted.Invoke(currentZone, GetPresetData());
+        EventManager.zoneStarted.Invoke(currentZone, GetPresetData(currentZone));
     }
 
-    private WheelPresetData GetPresetData()
+    private WheelPresetData GetPresetData(int index)
     {
         foreach (var preset in wheelPresetsByInterval)
         {
-            if (currentZone % preset.interval == 0)
+            if (index % preset.interval == 0)
             {
                 return preset;
             }
         }
 
         return null;
+    }
+
+    public Color GetZoneColor(int zoneIndex)
+    {
+        if (zoneIndex <= 0)
+        {
+            return Color.white;
+        }
+
+        return GetPresetData(zoneIndex).color;
     }
 }

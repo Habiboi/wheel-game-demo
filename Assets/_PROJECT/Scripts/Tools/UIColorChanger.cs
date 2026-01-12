@@ -4,9 +4,14 @@ using UnityEngine.UI;
 
 public class UIColorChanger : MonoBehaviour
 {
-    [SerializeField] private Color color = Color.white;
+    public Color color = Color.white;
 
-    void OnValidate()
+    private void OnValidate()
+    {
+        SetColor();
+    }
+
+    public void SetColor()
     {
         foreach (var image in GetComponentsInChildren<Image>(true))
         {
