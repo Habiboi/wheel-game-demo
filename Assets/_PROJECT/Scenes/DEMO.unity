@@ -1349,6 +1349,7 @@ MonoBehaviour:
   - {fileID: 694264754}
   - {fileID: 388968561}
   - {fileID: 881547993}
+  spinEffectData: {fileID: 11400000, guid: 4c13f553a211042e0b93dea0021af665, type: 2}
 --- !u!1001 &388968559
 PrefabInstance:
   m_ObjectHideFlags: 0

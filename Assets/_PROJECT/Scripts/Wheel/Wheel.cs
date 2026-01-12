@@ -8,6 +8,7 @@ public class Wheel : MonoBehaviour
     [SerializeField] private Image spinImage, indicatorImage;
     [SerializeField] private Button spinButton;
     [SerializeField] private WheelSlice[] slices;
+    [SerializeField] private WheelSpinEffectData spinEffectData;
 
     private RectTransform wheelTransform;
     private WheelSlice selectedSlice;
@@ -86,11 +87,11 @@ public class Wheel : MonoBehaviour
         float stepAngle = 360f / slices.Length;
         float targetAngle = index * stepAngle;
         float currentAngle = wheelTransform.localEulerAngles.z;
-        float fullRotations = -360f * 2;
+        float fullRotations = -360f * spinEffectData.extraSpinCount;
 
         float finalAngle = currentAngle + fullRotations + Mathf.DeltaAngle(currentAngle, targetAngle);
 
-        wheelTransform.DOLocalRotate(Vector3.forward * finalAngle, 2.6f, RotateMode.FastBeyond360).SetEase(Ease.InOutBack).OnComplete(() =>
+        wheelTransform.DOLocalRotate(Vector3.forward * finalAngle, spinEffectData.duration, RotateMode.FastBeyond360).SetEase(spinEffectData.ease).OnComplete(() =>
         {
             EventManager.sliceSelected.Invoke(selectedSlice);
         });

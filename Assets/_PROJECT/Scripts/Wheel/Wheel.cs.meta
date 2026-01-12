@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: 9a6a4fa4d4a644802a85fcacb1b10ebc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - spinImage: {instanceID: 0}
+  - indicatorImage: {instanceID: 0}
+  - spinButton: {instanceID: 0}
+  - spinEffectData: {fileID: 11400000, guid: 4c13f553a211042e0b93dea0021af665, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
