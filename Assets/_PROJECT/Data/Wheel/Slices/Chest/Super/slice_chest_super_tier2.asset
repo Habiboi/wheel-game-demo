@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7757244854854a64950dda53c8c7d15, type: 3}
   m_Name: slice_chest_super_tier2
   m_EditorClassIdentifier: Assembly-CSharp::WheelSliceData
-  sliceType: 0
   rewardData: {fileID: 11400000, guid: cef9770cc3c40406d83725dbbffa2254, type: 2}
   rewardAmount: 10
-  icon: {fileID: 0}
+  rewardIncreaseAmount: 1

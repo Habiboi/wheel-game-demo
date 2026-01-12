@@ -7,5 +7,13 @@ public class WheelSliceData : ScriptableObject
     public RewardData rewardData;
 
     [Min(1)]
-    public int rewardAmount;
+    [SerializeField] private int rewardAmount;
+
+    [Tooltip("Reward increase amount per zone")]
+    [SerializeField] private int rewardIncreaseAmount;
+
+    public int GetRewardAmount(int zoneIndex)
+    {
+        return rewardAmount + (zoneIndex - 1) * rewardIncreaseAmount;
+    }
 }

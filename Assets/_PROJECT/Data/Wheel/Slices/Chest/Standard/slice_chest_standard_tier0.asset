@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WheelSliceData
   rewardData: {fileID: 11400000, guid: 07afce54b80e6479f9bb044a848b4c7b, type: 2}
   rewardAmount: 1
-  icon: {fileID: 0}
+  rewardIncreaseAmount: 1

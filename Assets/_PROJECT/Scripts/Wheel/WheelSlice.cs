@@ -58,11 +58,11 @@ public class WheelSlice : MonoBehaviour
         });
     }
 
-    public void SetSlice(WheelSliceData data)
+    public void SetSlice(WheelSliceData data, int zoneIndex)
     {
         SetBomb(false);
         rewardImage.sprite = data.rewardData.icon;
-        rewardText.text = data.rewardAmount.GetRewardText();
+        rewardText.text = data.GetRewardAmount(zoneIndex).GetRewardText();
         currentData = data;
     }
 

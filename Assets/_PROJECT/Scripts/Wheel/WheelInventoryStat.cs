@@ -9,6 +9,7 @@ public class WheelInventoryStat : MonoBehaviour
     [SerializeField] private TextMeshProUGUI amountText;
 
     private int amount = 0;
+    private int currentZoneIndex;
 
 #if UNITY_EDITOR
     void OnValidate()
@@ -26,6 +27,7 @@ public class WheelInventoryStat : MonoBehaviour
     private void OnEnable()
     {
         EventManager.wheelStarted.AddListener(OnWheelStarted);
+        EventManager.zoneStarted.AddListener(OnZoneStarted);
         EventManager.sliceCollected.AddListener(OnSliceCollected);
     }
     private void OnDisable()
@@ -37,6 +39,10 @@ public class WheelInventoryStat : MonoBehaviour
     {
         SetAmount(0);
     }
+    private void OnZoneStarted(int zoneIndex, WheelPresetData data)
+    {
+        currentZoneIndex = zoneIndex;
+    }
     private void OnSliceCollected(WheelSliceData data)
     {
         if (!rewardData.Equals(data.rewardData))
@@ -44,7 +50,7 @@ public class WheelInventoryStat : MonoBehaviour
             return;
         }
 
-        SetAmount(amount + data.rewardAmount);
+        SetAmount(amount + data.GetRewardAmount(currentZoneIndex));
     }
 
     private const string FORMAT = "N0";
