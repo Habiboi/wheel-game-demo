@@ -1,6 +1,6 @@
-# Lucky Wheel Game - Senior Case Study
+# Lucky Wheel Game - Game Developer Case Study
 
-This project is a high-performance, data-driven "Lucky Wheel" game developed for a Senior Game Developer case. The architecture focuses on **scalability**, **clean code principles**, and **optimization**.
+This project is a high-performance, data-driven "Lucky Wheel" game developed for a Game Developer case. The architecture focuses on **scalability**, **clean code principles**, and **optimization**.
 
 ## 🚀 Key Features
 
