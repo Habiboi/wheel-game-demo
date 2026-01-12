@@ -15,7 +15,21 @@ public class WheelManager : MonoBehaviour
         wheelPresetsByInterval = zoneRuleData.presets.OrderByDescending(x => x.interval).ToList();
     }
 
-    void Start()
+    private void OnEnable()
+    {
+        EventManager.zoneEnded.AddListener(OnZoneEnded);
+    }
+    private void OnDisable()
+    {
+        EventManager.zoneEnded.RemoveListener(OnZoneEnded);
+    }
+    private void OnZoneEnded()
+    {
+        currentZone++;
+        SetZone();
+    }
+
+    private void Start()
     {
         EventManager.wheelStarted.Invoke();
         SetZone();

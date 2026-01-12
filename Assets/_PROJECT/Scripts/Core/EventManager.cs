@@ -6,4 +6,5 @@ public static class EventManager
     public static readonly UnityEvent<int, WheelPresetData> zoneStarted = new();
     public static readonly UnityEvent<WheelSlice> sliceSelected = new();
     public static readonly UnityEvent<WheelSliceData> sliceCollected = new();
+    public static readonly UnityEvent zoneEnded = new();
 }

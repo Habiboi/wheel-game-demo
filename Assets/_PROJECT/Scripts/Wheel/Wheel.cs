@@ -19,14 +19,13 @@ public class Wheel : MonoBehaviour
         indicatorImage ??= transform.Find("ui_image_indicator")?.GetComponent<Image>();
         spinButton ??= transform.Find("ui_button_spin")?.GetComponent<Button>();
         slices = GetComponentsInChildren<WheelSlice>();
-
-        spinButton.onClick.AddListener(Spin);
     }
 #endif
 
     private void Awake()
     {
         wheelTransform = spinImage.rectTransform;
+        spinButton.onClick.AddListener(Spin);
     }
 
     private void OnEnable()
@@ -40,6 +39,7 @@ public class Wheel : MonoBehaviour
     private void OnZoneStarted(int zoneIndex, WheelPresetData presetData)
     {
         SetWheel(presetData.spinSprite, presetData.indicatorSprite, presetData.availableSlices, presetData.allowBomb);
+        spinButton.interactable = true;
     }
 
     private void SetWheel(Sprite spinSprite, Sprite indicatorSprite, List<WheelSliceData> sliceDatas, bool allowBomb)
@@ -93,7 +93,7 @@ public class Wheel : MonoBehaviour
         wheelTransform.DOLocalRotate(Vector3.forward * finalAngle, 2.6f, RotateMode.FastBeyond360).SetEase(Ease.InOutBack).OnComplete(() =>
         {
             EventManager.sliceSelected.Invoke(selectedSlice);
-            DOVirtual.DelayedCall(1f, () => spinButton.interactable = true);
+            DOVirtual.DelayedCall(1f, EventManager.zoneEnded.Invoke);
         });
     }
 }
