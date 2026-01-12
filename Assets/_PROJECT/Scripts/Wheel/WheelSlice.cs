@@ -10,6 +10,7 @@ public class WheelSlice : MonoBehaviour
     [SerializeField] private GameObject uiPanel, bombPanel;
 
     private WheelSliceData currentData;
+    private bool isBomb;
 
 #if UNITY_EDITOR
     void OnValidate()
@@ -36,6 +37,12 @@ public class WheelSlice : MonoBehaviour
             return;
         }
 
+        if (isBomb)
+        {
+            EventManager.bombSelected.Invoke();
+            return;
+        }
+
         bool collected = false;
         uiPanel.transform.DOScale(1.5f, 0.4f).SetLoops(2, LoopType.Yoyo).SetEase(Ease.OutExpo).SetDelay(0.2f).OnStepComplete(() =>
         {
@@ -43,6 +50,10 @@ public class WheelSlice : MonoBehaviour
             {
                 EventManager.sliceCollected.Invoke(currentData);
                 collected = true;
+            }
+            else
+            {
+                EventManager.zoneEnded.Invoke();
             }
         });
     }
@@ -57,6 +68,7 @@ public class WheelSlice : MonoBehaviour
 
     public void SetBomb(bool isActive)
     {
+        isBomb = isActive;
         bombPanel.SetActive(isActive);
         uiPanel.SetActive(!isActive);
     }

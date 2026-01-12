@@ -93,7 +93,6 @@ public class Wheel : MonoBehaviour
         wheelTransform.DOLocalRotate(Vector3.forward * finalAngle, 2.6f, RotateMode.FastBeyond360).SetEase(Ease.InOutBack).OnComplete(() =>
         {
             EventManager.sliceSelected.Invoke(selectedSlice);
-            DOVirtual.DelayedCall(1f, EventManager.zoneEnded.Invoke);
         });
     }
 }

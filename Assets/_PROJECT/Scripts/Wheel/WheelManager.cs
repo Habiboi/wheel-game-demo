@@ -18,23 +18,34 @@ public class WheelManager : MonoBehaviour
     private void OnEnable()
     {
         EventManager.zoneEnded.AddListener(OnZoneEnded);
+        EventManager.wheelRestarted.AddListener(OnWheelRestarted);
     }
     private void OnDisable()
     {
         EventManager.zoneEnded.RemoveListener(OnZoneEnded);
+        EventManager.wheelRestarted.RemoveListener(OnWheelRestarted);
     }
     private void OnZoneEnded()
     {
         currentZone++;
         SetZone();
     }
+    private void OnWheelRestarted()
+    {
+        currentZone = 1;
+        ResetWheel();
+    }
 
     private void Start()
+    {
+        ResetWheel();
+    }
+
+    private void ResetWheel()
     {
         EventManager.wheelStarted.Invoke();
         SetZone();
     }
-
     private void SetZone()
     {
         EventManager.zoneStarted.Invoke(currentZone, GetPresetData(currentZone));
