@@ -84,6 +84,7 @@ public class Wheel : MonoBehaviour
 
     private void SpinToIndex(int index)
     {
+        EventManager.spinStarted.Invoke();
         float stepAngle = 360f / slices.Length;
         float targetAngle = index * stepAngle;
         float currentAngle = wheelTransform.localEulerAngles.z;
