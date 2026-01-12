@@ -52,6 +52,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WheelSlice
   rewardImage: {fileID: 2893089456579018355}
   rewardText: {fileID: 8354881288875727965}
+  uiPanel: {fileID: 950136491452471456}
+  bombPanel: {fileID: 1181640901831405495}
 --- !u!1 &950136491452471456
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +178,7 @@ GameObject:
   - component: {fileID: 1933937479428206285}
   - component: {fileID: 2893089456579018355}
   m_Layer: 5
-  m_Name: ui_image_reward
+  m_Name: ui_image_reward_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,7 +253,7 @@ GameObject:
   - component: {fileID: 7812851055480379448}
   - component: {fileID: 8354881288875727965}
   m_Layer: 5
-  m_Name: ui_text_reward
+  m_Name: ui_text_reward_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 2010056}
   - component: {fileID: 2010055}
   m_Layer: 5
-  m_Name: ui_image_indicator
+  m_Name: ui_image_indicator_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,6 +347,10 @@ PrefabInstance:
       propertyPath: rewardData
       value: 
       objectReference: {fileID: 11400000, guid: 07afce54b80e6479f9bb044a848b4c7b, type: 2}
+    - target: {fileID: 5801088984316100695, guid: b146746ce33034093b1ef406b923fda5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c0dc77f990631432aba234658fcecf36, type: 3}
     - target: {fileID: 7427191422209984327, guid: b146746ce33034093b1ef406b923fda5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -545,6 +549,10 @@ PrefabInstance:
       propertyPath: rewardData
       value: 
       objectReference: {fileID: 11400000, guid: cef9770cc3c40406d83725dbbffa2254, type: 2}
+    - target: {fileID: 5801088984316100695, guid: b146746ce33034093b1ef406b923fda5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c5b2a94d5fdbe49708b198c9598dfe26, type: 3}
     - target: {fileID: 7427191422209984327, guid: b146746ce33034093b1ef406b923fda5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -647,7 +655,7 @@ GameObject:
   - component: {fileID: 168867880}
   - component: {fileID: 168867879}
   m_Layer: 5
-  m_Name: ui_image_current
+  m_Name: ui_image_current_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1024,7 +1032,7 @@ GameObject:
   - component: {fileID: 241901676}
   - component: {fileID: 241901675}
   m_Layer: 5
-  m_Name: ui_image_spin
+  m_Name: ui_image_spin_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1819,7 +1827,7 @@ GameObject:
   - component: {fileID: 799564400}
   - component: {fileID: 799564399}
   m_Layer: 5
-  m_Name: ui_text_counts
+  m_Name: ui_text_counts_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2656,6 +2664,10 @@ PrefabInstance:
       propertyPath: rewardData
       value: 
       objectReference: {fileID: 11400000, guid: 39d9a5a2c57a343da9dbd5c449d871ee, type: 2}
+    - target: {fileID: 5801088984316100695, guid: b146746ce33034093b1ef406b923fda5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b3d3bb578cb77433e847cdbfab8dae08, type: 3}
     - target: {fileID: 7427191422209984327, guid: b146746ce33034093b1ef406b923fda5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4335,6 +4347,10 @@ PrefabInstance:
       propertyPath: rewardData
       value: 
       objectReference: {fileID: 11400000, guid: 2ce53ce6b35ca4ec28116dbbe7b60efa, type: 2}
+    - target: {fileID: 5801088984316100695, guid: b146746ce33034093b1ef406b923fda5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 829088a4688c14da39ce35bc6454672e, type: 3}
     - target: {fileID: 7427191422209984327, guid: b146746ce33034093b1ef406b923fda5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
